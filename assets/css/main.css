@@ -1,0 +1,2730 @@
+  /**
+* Template Name: Techie
+* Template URL: https://bootstrapmade.com/techie-free-skin-bootstrap-3/
+* Updated: Aug 07 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+
+/* Estilo para el fondo en resoluciones de móvil (430 x 932) */
+@media only screen and (max-width: 1920px) and (max-height: 1080px) {
+  .index-page {
+    background-image: url('../img/fondo.png'); /* Cambia la imagen de fondo */
+    background-size: 1920px 5000px; /* Establece el tamaño específico de la imagen */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-attachment: scroll; /* Mantiene el fondo fijo al hacer scroll */
+    min-height: 100vh; /* Asegura que ocupe al menos la altura completa del viewport */
+    background-color: transparent; /* Evita que el fondo general afecte esta resolución */
+  }
+}
+
+
+/* Estilo para el fondo en resoluciones de móvil (430 x 932) */
+@media only screen and (max-width: 430px) and (max-height: 932px) {
+  .index-page {
+    background-image: url('../img/fondo-celu.png'); /* Cambia la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-attachment: scroll; /* Mantiene el fondo fijo al hacer scroll */
+    min-height: 100vh; /* Asegura que ocupe al menos la altura completa del viewport */
+    background-color: transparent; /* Evita que el fondo general afecte esta resolución */
+  }
+}
+
+
+/* Fonts */
+:root {
+  --default-font: "Comfortaa", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Bungee", sans-serif;
+  --nav-font: "Comfortaa", sans-serif;
+}
+
+header .navmenu ul li a { 
+  color: #0A1A44; /* Color del texto por defecto */
+  background-color: transparent; /* Sin color de fondo por defecto */
+  transition: color 0.3s; /* Solo se transiciona el color del texto */
+}
+
+header .navmenu ul li a:hover {
+  color: #0A1A44; /* Color del texto al pasar el ratón */
+  background-color: transparent; /* Sin fondo al pasar el ratón */
+}
+
+/* Estilo del header en su estado inicial */
+.header {
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo del header al hacer scroll */
+.header.scrolled {
+  background-color: #FEDEF3; /* Color al hacer scroll */
+}
+
+/* Cambiar el color del texto del menú al hacer scroll */
+.header.scrolled .navmenu ul li a {
+  color: #333; /* Color del texto al hacer scroll */
+}
+
+/* Cambiar el color del enlace activo al hacer scroll */
+.header.scrolled .navmenu ul li a.active {
+  color: #333; /* Color del enlace activo al hacer scroll */
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root { 
+  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #C5547E; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #C5547E; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #C5547E; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #C5547E; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  --nav-color: rgba(255, 255, 255, 0.8);  /* The default color of the main navmenu links */
+  --nav-hover-color: #C5547E; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #C5547E; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the same color scheme. */
+
+.dark-background {
+  --background-color: #060606;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #202020;
+  --contrast-color: #ffffff;
+}
+
+.accent-background {
+  --background-color: #C5547E;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --accent-color: #C5547E;
+  --surface-color: #7c25ba;
+  --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/* ------------------------------------------------------------------
+   Cambios para agregar la imagen PNG de fondo
+------------------------------------------------------------------ */
+
+/* Aplica la imagen PNG como fondo */
+body {
+  background-image: url('assets/img/fondo.png'); /* Ruta de la imagen */
+  background-size: contain; /* Asegura que la imagen mantenga su tamaño */
+  background-position: center center; /* Centra la imagen en la pantalla */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Hace que la imagen se mantenga fija al hacer scroll */
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1200px) {
+  body {
+    background-size: cover; /* Cubre todo el fondo en pantallas grandes */
+  }
+}
+
+/* Otros estilos relacionados con el header */
+.header {
+  background-color: transparent; /* Hace el header transparente para que se vea el fondo */
+  transition: background-color 0.3s ease;
+}
+
+/* Si querés que el header cambie de color al hacer scroll */
+.header.scrolled {
+  background-color: rgba(254, 222, 243, 0.8); /* Fondo semitransparente al hacer scroll */
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color); /* Se respeta el color de fondo general */
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+/* Custom CSS for scroll color change */
+<style>
+  /* Estilo del header en su estado inicial */
+  .header {
+    transition: background-color 0.3s ease;
+  }
+
+  /* Estilo del header al hacer scroll */
+  .header.scrolled {
+    background-color: #fedef3; /* Color al hacer scroll */
+  }
+
+  /* Estilos del menú de navegación */
+  .navmenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  .navmenu ul li {
+    margin-left: 20px;
+  }
+
+  .navmenu ul li a {
+    text-decoration: none;
+    color: #000; /* Color inicial de los enlaces */
+    transition: color 0.3s ease;
+  }
+
+  /* Cambiar el color del texto del menú al hacer scroll */
+  .header.scrolled .navmenu ul li a {
+    color: #333;
+  }
+
+  /* Estilos específicos para el enlace activo (Inicio) */
+ 
+
+/* PHP Email Form Messages
+------------------------------*/
+.php-email-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: var(--surface-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--surface-color);
+  animation: php-email-form-loading 1s linear infinite;
+}
+
+@keyframes php-email-form-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  --background-color: rgba(0, 0, 0, 0);
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 20px 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+.header .logo {
+  line-height: 1;
+}
+
+.header .logo img {
+  max-height: 36px;
+  margin-right: 8px;
+}
+
+.header .logo h1 {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.header .btn-getstarted,
+.header .btn-getstarted:focus {
+  color: var(--contrast-color);
+  font-size: 14px;
+  padding: 7px 25px;
+  margin: 0 0 0 30px;
+  border-radius: 4px;
+  transition: 0.3s;
+  border: 2px solid color-mix(in srgb, var(--contrast-color), transparent 50%);
+}
+
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus:hover {
+  color: var(--contrast-color);
+  border-color: var(--contrast-color);
+}
+
+@media (max-width: 1200px) {
+  .header .logo {
+    order: 1;
+  }
+
+  .header .btn-getstarted {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 15px;
+  }
+
+  .header .navmenu {
+    order: 3;
+  }
+}
+
+.scrolled .header {
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Header on Scroll
+------------------------------*/
+.scrolled .header {
+  --background-color: #FEDEF3;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Desktop Navigation */
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navmenu li {
+    position: relative;
+  }
+
+  .navmenu>ul>li {
+    white-space: nowrap;
+    padding: 15px 14px;
+  }
+
+  .navmenu>ul>li:last-child {
+    padding-right: 0;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color);
+    font-size: 15px;
+    padding: 0 2px;
+    font-family: var(--nav-font);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    transition: 0.3s;
+  }
+
+  .navmenu>ul>li>a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: var(--nav-hover-color);
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .navmenu a:hover:before,
+  .navmenu li:hover>a:before,
+  .navmenu .active:before {
+    visibility: visible;
+    width: 100%;
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-hover-color);
+  }
+
+  .navmenu .dropdown ul {
+    margin: 0;
+    padding: 10px 0;
+    background: var(--nav-dropdown-background-color);
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    left: 14px;
+    top: 130%;
+    opacity: 0;
+    transition: 0.3s;
+    border-radius: 4px;
+    z-index: 99;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .navmenu .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .navmenu .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: none;
+    color: var(--nav-dropdown-color);
+  }
+
+  .navmenu .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navmenu .dropdown ul a:hover,
+  .navmenu .dropdown ul .active:hover,
+  .navmenu .dropdown ul li:hover>a {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  .navmenu .dropdown .dropdown ul {
+    top: 0;
+    left: -90%;
+    visibility: hidden;
+  }
+
+  .navmenu .dropdown .dropdown:hover>ul {
+    opacity: 1;
+    top: 0;
+    left: -100%;
+    visibility: visible;
+  }
+}
+
+/* Mobile Navigation */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: #C5547E; /* Cambia el color al que quieras */
+    font-size: 28px;
+    line-height: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .navmenu {
+    padding: 0;
+    z-index: 9997;
+  }
+
+  .navmenu ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    inset: 60px 20px 20px 20px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    background-color: var(--nav-mobile-background-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    box-shadow: none;
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 9998;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-dropdown-color);
+    padding: 10px 20px;
+    font-family: var(--nav-font);
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  }
+
+  .navmenu a i:hover,
+  .navmenu a:focus i:hover {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+  }
+
+  .navmenu a:hover,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .active i,
+  .navmenu .active:focus i {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    transform: rotate(180deg);
+  }
+
+  .navmenu .dropdown ul {
+    position: static;
+    display: none;
+    z-index: 99;
+    padding: 10px 0;
+    margin: 10px 20px;
+    background-color: var(--nav-dropdown-background-color);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .navmenu .dropdown ul ul {
+    background-color: rgba(33, 37, 41, 0.1);
+  }
+
+  .navmenu .dropdown>.dropdown-active {
+    display: block;
+    background-color: rgba(33, 37, 41, 0.03);
+  }
+
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #fff;
+    position: absolute;
+    font-size: 32px;
+    top: 15px;
+    right: 15px;
+    margin-right: 0;
+    z-index: 9999;
+  }
+
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    background: rgba(33, 37, 41, 0.8);
+    transition: 0.3s;
+  }
+
+  .mobile-nav-active .navmenu>ul {
+    display: block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Footer
+--------------------------------------------------------------*/
+.footer {
+  margin-top: -800px; /* Sube el footer hacia arriba */
+  padding-bottom: 0; /* Remueve padding inferior si es necesario */
+}
+
+.footer {
+  color: #0A1A44; /* Cambia el color de la tipografía */
+  background-color: #FEDEF3; /* Cambia el color de fondo */
+  font-size: 14px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.footer .footer-top {
+  padding-top: 50px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .footer-about .logo {
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-about .logo span {
+  color: #0A1A44; /* Color de la tipografía del logo */
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: var(--heading-font);
+}
+
+.footer .footer-about p {
+  font-size: 14px;
+  font-family: var(--heading-font);
+  color: #0A1A44; /* Color del párrafo */
+}
+
+.footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #0A1A44; /* Color del borde de los íconos sociales */
+  font-size: 16px;
+  color: #0A1A44; /* Color de los íconos sociales */
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  color: #FEDEF3; /* Color de íconos al hacer hover */
+  border-color: #FEDEF3; /* Color del borde al hacer hover */
+}
+
+.footer h4 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 12px;
+  color: #0A1A44; /* Color de los títulos */
+}
+
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-links ul i {
+  padding-right: 2px;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-links ul a {
+  color: #0A1A44; /* Color de los enlaces */
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+  color: #0A1A44; /* Mantén el mismo color o ajusta si prefieres un cambio */
+}
+
+.footer .footer-contact p {
+  margin-bottom: 5px;
+  color: #0A1A44; /* Color del contacto */
+}
+
+.footer .copyright {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #FEDEF3; /* Color del fondo de la sección de copyright */
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+  color: #0A1A44; /* Color del texto de copyright */
+}
+
+.footer .credits {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #0A1A44; /* Color del texto de los créditos */
+}
+
+/* Ajustes específicos para resolución 430x932 */
+@media (max-width: 430px) and (max-height: 932px) {
+  .footer {
+    margin-top: -640px; /* Ajusta este valor para subir el footer */
+  }
+}
+
+/* Ajustes específicos para resolución 430x932 */
+@media (max-width: 430px) and (max-height: 932px) {
+  .footer {
+    margin-top: -660px; /* Ajusta este valor para subir el footer */
+  }
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  background-color: var(--background-color);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+#preloader:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 100;
+}
+
+#preloader .spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--accent-color);
+  border-top-color: var(--background-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 101;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background-color: var(--accent-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+.page-title {
+  color: var(--default-color);
+  background: linear-gradient(45deg, var(--background-color) 0%, color-mix(in srgb, var(--surface-color), transparent 10%) 100%), url("../img/page-title-bg.jpg") top center no-repeat;
+  background-size: cover;
+  padding: 160px 0 80px 0;
+  text-align: center;
+  position: relative;
+}
+
+.page-title h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.page-title .breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.page-title .breadcrumbs ol li+li {
+  padding-left: 10px;
+}
+
+.page-title .breadcrumbs ol li+li::before {
+  content: "/";
+  display: inline-block;
+  padding-right: 10px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 92px;
+  overflow: clip;
+}
+
+@media (max-width: 1199px) {
+
+  section,
+  .section {
+    scroll-margin-top: 77px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  position: relative;
+  top: -60px; /* Mueve la sección hacia arriba */
+}
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 120px 0 60px 0;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(45deg, var(--background-color) 0%, color-mix(in srgb, var(--surface-color), transparent 10%) 100%), url("../img/hero-bg.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 500px; /* Ancho máximo del párrafo */
+  font-size: 65px;
+  font-weight: 700;
+  line-height: 75px;
+  margin: 0px 0 -5px 0; /* Ajusta el valor superior (20px) para bajar el párrafo */
+  color: #C5547E; /* Color modificado */
+    margin-left: 120px; /* Mueve el título a la derecha */
+}
+
+.hero p { 
+  color: #0A1A44; /* Color modificado */
+  margin: 10px 0 -100px 20px; /* Ajusta el valor superior (20px) para bajar el párrafo y lo mueve a la derecha */
+  font-size: 20px;
+  font-weight: 400;
+  max-width: 400px; /* Ancho máximo del párrafo */
+  width: 100%; /* Asegura que el párrafo use todo el ancho disponible */
+  line-height: 1.6; /* Ajusta la altura de línea para mejorar la legibilidad */
+    margin-left: 120px; /* Mueve el título a la derecha */
+}
+
+.hero .btn-get-started {
+  color: #21B085;
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 36px;
+  border-radius: 4px;
+  transition: 0.5s;
+  border: 2px solid #21B085;
+}
+
+.hero .btn-get-started:hover {
+  color: var(--accent-color);
+  background: var(--contrast-color);
+}
+
+.hero .btn-watch-video {
+  font-size: 16px;
+  transition: 0.5s;
+  margin-left: 25px;
+  color: var(--default-color);
+  font-weight: 600;
+}
+
+.hero .btn-watch-video i {
+  color: var(--accent-color);
+  font-size: 32px;
+  transition: 0.3s;
+  line-height: 0;
+  margin-right: 8px;
+}
+
+.hero .btn-watch-video:hover {
+  color: var(--accent-color);
+}
+
+.hero .btn-watch-video:hover i {
+  color: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+.hero .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+/* Ajuste para la imagen del héroe */
+.hero-img {
+  position: relative;
+}
+
+.hero-img img {
+  width: 120%; /* Aumentar el tamaño de la imagen */
+  height: auto; /* Mantener la proporción de la imagen */
+  position: relative;
+  left: 0%; /* Ajustar la posición horizontal si es necesario */
+}
+
+/* Ajustes para los corazones */
+.corazon {
+  position: absolute;
+  width: 60px; /* Tamaño del corazón */
+  height: auto;
+  animation: up-down 2s ease-in-out infinite alternate-reverse;
+}
+
+.corazon1 {
+  bottom: 10px; /* Ubicación en la punta inferior izquierda */
+  left: 10px;
+}
+
+.corazon2 {
+  top: 10px; /* Ubicación en la punta superior derecha */
+  right: 10px;
+}
+
+/* Animación para los corazones */
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Ajustes específicos para la resolución de 430x932 */
+@media (max-width: 430px) and (max-height: 932px) {
+  .hero {
+    top: 0; /* Quita el ajuste de top en esta resolución */
+    padding: 60px 0 30px 0; /* Ajuste de padding para pantallas más pequeñas */
+    min-height: auto; /* Permitir que el contenido ajuste la altura */
+  }
+
+  .hero h1 {
+    font-size: 42px; /* Aumenta el tamaño de fuente del título */
+    line-height: 48px; /* Ajuste de altura de línea para el nuevo tamaño de fuente */
+    margin-left: 0; /* Mantiene el título sin desplazamiento en esta resolución */
+  }
+
+  .hero p {
+    font-size: 16px; /* Tamaño de fuente más pequeño */
+    margin-bottom: 20px; /* Espaciado inferior */
+      margin-top: 13px; /* Espacio entre el título y el párrafo */
+    margin-left: 0; /* Mantiene el subtítulo sin desplazamiento en esta resolución */
+    color: #0A1A44 !important; /* Cambia el color del párrafo a #0A1A44 */
+  }
+
+  .hero .btn-get-started,
+  .hero .btn-watch-video {
+    font-size: 14px; /* Ajuste de tamaño de fuente para botones */
+    padding: 8px 20px; /* Ajuste de padding */
+  }
+
+  .hero-img img {
+    width: 100%; /* Asegurar que la imagen no desborde */
+    left: 0; /* Ajustar la posición horizontal */
+  }
+
+  .corazon {
+    width: 40px; /* Tamaño más pequeño para los corazones */
+  }
+}
+
+
+/* Stats Section */
+#stats {
+    position: relative;
+    top: -171px; /* Mueve la sección hacia arriba 50px */
+    padding: 0; /* Sin padding adicional */
+    min-height: 280px;
+    background: url("../assets/img/fondo-general.png") center center no-repeat;
+    background-size: cover;
+}
+
+#stats {
+    position: relative;
+    padding: 120px 0; /* Aumenta el padding para dar más espacio a la sección */
+    background: url("../assets/img/fondo-general.png") center center no-repeat;
+    background-size: cover;
+}
+
+#stats .container {
+    position: relative;
+    z-index: 1;
+}
+
+.stats-item {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    z-index: 2;
+}
+
+.stats-item img.card-background {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 320px; /* Aumenta el tamaño de las imágenes */
+    height: auto;
+    opacity: 0.7;
+}
+
+
+/* Estilo para los iconos SVG */
+.stats-item img.icon {
+    width: 80px; /* Aumenta el tamaño del icono */
+    height: auto;
+    margin-bottom: 5px; /* Reduce el espacio entre el icono y el título */
+    position: relative;
+    z-index: 3;
+    margin-top: 20px; /* Baja el icono un poco más */
+}
+
+/* Estilos de texto */
+.stats-item span {
+    font-size: 20px;
+    display: block;
+    color: #C5547E; /* Cambia el color de la tipografía */
+    font-weight: bold;
+    z-index: 3;
+    position: relative;
+    margin-top: 10px; /* Reduce el margen superior para acercar el título al icono */
+}
+
+.stats-item p {
+    font-family: 'Bungee', sans-serif;
+    font-size: 24px;
+    color: #C5547E; /* Cambia el color de la tipografía */
+    z-index: 3;
+    position: relative;
+    margin-top: 10px;
+}
+
+.row.gy-4 {
+    gap: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .row.gy-4 {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/* Clases para mover la sección de "Batería" */
+
+/* Mover el icono de batería */
+.mover-bateria {
+    position: relative; /* Asegúrate de que esté en posición relativa */
+    top: 25px; /* Baja el icono hacia abajo ajustando este valor */
+    margin-left: 20px !important; /* Mantén el margen izquierdo según necesites */
+}
+
+/* Mover el título "Batería" */
+.mover-titulo-bateria {
+    position: relative; /* Asegúrate de que esté en posición relativa */
+    top: 6px; /* Baja el título ajustando este valor */
+    margin-left: 10px !important;
+}
+
+/* Mover el texto "50 horas" */
+.mover-texto-bateria {
+    position: relative; /* Asegúrate de que esté en posición relativa */
+    top: -1px; /* Baja el título ajustando este valor */
+    margin-left: 10px !important;
+}
+
+/* Conectividad */
+.mover-icono-conectividad {
+    position: relative; /* Asegúrate de que esté en posición relativa */
+    top: 23px; /* Baja el icono hacia abajo ajustando este valor */
+    margin-left: 6px !important; /* Mantén el margen izquierdo según necesites */
+}
+.mover-titulo-conectividad {
+    position: relative; /* Asegúrate de que esté en posición relativa */
+    top: 6px; /* Baja el título ajustando este valor */
+    margin-left: 10px !important;
+}
+.mover-texto-conectividad {
+    position: relative; /* Asegúrate de que esté en posición relativa */
+    top: -1px; /* Baja el título ajustando este valor */
+    margin-left: 12px !important;
+}
+
+/* Frecuencia */
+.mover-icono-frecuencia {
+    position: relative; /* Asegúrate de que esté en posición relativa */
+    top: 25px; /* Baja el icono hacia abajo ajustando este valor */
+    margin-left: 1px !important; /* Mantén el margen izquierdo según necesites */
+}
+.mover-titulo-frecuencia {
+    position: relative; /* Asegúrate de que esté en posición relativa */
+    top: 6px; /* Baja el título ajustando este valor */
+    margin-left: 10px !important;
+}
+.mover-texto-frecuencia {
+    position: relative; /* Asegúrate de que esté en posición relativa */
+    top: -1px; /* Baja el título ajustando este valor */
+    margin-left: 10px !important;
+}
+
+/* Impedancia */
+.mover-icono-impedancia {
+    position: relative; /* Asegúrate de que esté en posición relativa */
+    top: 25px; /* Baja el icono hacia abajo ajustando este valor */
+    margin-left: -15px !important; /* Mantén el margen izquierdo según necesites */
+}
+.mover-titulo-impedancia {
+    position: relative; /* Asegúrate de que esté en posición relativa */
+    top: 6px; /* Baja el título ajustando este valor */
+    margin-left: -12px !important;
+}
+.mover-texto-impedancia {
+    position: relative; /* Asegúrate de que esté en posición relativa */
+    top: -1px; /* Baja el título ajustando este valor */
+    margin-left: -12px !important;
+}
+
+
+/* Ajustes específicos para la resolución de 430px */
+@media (max-width: 430px) {
+    #stats {
+        top: -150px; /* Solo mueve la sección hacia arriba */
+    }
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+# Features Section
+--------------------------------------------------------------*/
+.features .features-item {
+  padding-left: 30px; /* Ajusta este valor según sea necesario */
+}
+
+.features {
+  margin-top: -30px; /* Usa un valor negativo pequeño para subir la sección */
+  min-height: 500px; /* Mantén la altura mínima deseada */
+  margin-left: 60px; /* Ajusta este valor para mover toda la sección a la derecha */
+  padding-top: 20px; /* Añade un poco de espacio superior si es necesario */
+  overflow: visible; /* Asegúrate de que no esté oculto */
+}
+
+.features .features-image {
+  position: relative;
+  min-height: 400px;
+  margin: 0; /* Asegura que no haya margen */
+  padding: 0; /* Asegura que no haya padding */
+}
+
+.features .section-title {
+  text-align: left; /* Alinea el título a la izquierda */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea el contenido hacia la izquierda */
+  margin-bottom: -260px; /* Reduce el margen inferior para disminuir el espacio */
+  padding-bottom: 10; /* Asegúrate de que no haya padding adicional */
+}
+
+.features .estrella-icon {
+  width: 40px; /* Ajusta el tamaño según lo que necesites */
+  margin-bottom: 5px; /* Espacio entre la estrella y el título */
+   margin-left: -15px; /* Ajusta este valor para mover la estrella a la izquierda */
+}
+
+.features .section-title h2 {
+  font-size: 32px; /* Ajusta el tamaño si es necesario */
+  margin: 2px 0; /* Espaciado entre la estrella y el título */
+  color: #C5547E; /* Color modificado */
+  margin-bottom: 100; /* Reduce el margen inferior a 0 o un valor pequeño */
+  margin-top: 5px; /* Reduce el margen superior del párrafo */
+}
+
+
+/* Controla el margen entre el título y la imagen */
+.features .section-title h2 {
+  margin-top: 10px; /* Ajusta el margen superior si es necesario */
+  margin-bottom: 10px; /* Controla el margen inferior del título */
+  margin: 5px 0 -3000px; /* Elimina margen no deseado */
+}
+
+.features .features-item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  color: #C5547E;
+}
+
+/* Estilos para los nuevos iconos que son imágenes */
+.features .icono-img {
+  width: 48px;
+  height: 48px;
+  margin-right: 20px; /* Espacio entre el ícono y el texto */
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
+}
+
+/* Ajustes para mover los íconos a la izquierda solo en pantallas más grandes */
+@media only screen and (min-width: 431px), (min-height: 933px) {
+  .features .icono-img {
+    margin-left: -25px; /* Ajusta el margen para mover a la izquierda solo en resoluciones más grandes */
+  }
+}
+
+.features .features-item p {
+  font-size: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 0px 0 0 0; /* Agrega margen superior de 10px */
+  color: #0A1A44 !important; /* Cambia el color del párrafo a #0A1A44 */
+}
+
+.audiculares-img {
+  width: 150%; 
+  max-width: none; 
+  height: auto; 
+  transform: translateX(-170px) translateY(-70px); /* Mueve la imagen 170px a la izquierda y 20px hacia abajo */
+  margin: 0; 
+  padding: 0; 
+}
+
+/* Ajustes de margen en los elementos de la lista */
+.features .features-item {
+  margin-top: 15px; /* Reduce el espacio entre los ítems */
+  padding-bottom: 15px; /* Puedes reducir este padding si aún hay mucho espacio */
+}
+
+
+.features .section-title .estrella-icon {
+  margin-bottom: 0; /* Elimina espacio adicional entre estrella y título */
+   margin-left: px; /* Ajusta este valor para mover la estrella a la izquierda */
+}
+
+/* Elimina el margen de las filas */
+.row {
+  margin: 0; /* Elimina el margen por defecto */
+}
+
+/* Espaciado entre columnas */
+.gy-4 {
+  margin-top: 0; /* Elimina el margen superior */
+  margin-bottom: 0; /* Elimina el margen inferior */
+}
+
+/* Ajustes específicos para la resolución de 430px */
+@media (max-width: 430px) {
+  .features {
+    margin-top: -260px; /* Ajusta este valor para mover la sección hacia arriba */
+  }
+
+  .features .section-title {
+    margin-bottom: 20px; /* Espacio adicional para la imagen y el título */
+  }
+
+  .audiculares-img {
+    position: absolute; /* Cambiar a posición absoluta para mover la imagen */
+    top: -90px; /* Ajusta este valor para colocar la imagen encima del título */
+    left: 42%; /* Centrar horizontalmente */
+    transform: translate(-50%, 0); /* Centrar horizontalmente sin cambiar el tamaño */
+    width: auto; /* Mantiene el tamaño original de la imagen */
+    max-width: 120%; /* Asegura que la imagen no exceda el ancho de su contenedor */
+  }
+
+  /* Ajustes para el título "La calidad que vos elegís" */
+  .features .section-title h2 {
+    position: relative; /* Asegúrate de que esté en posición relativa */
+    top: 360px; /* Ajusta este valor para subir el título */
+    margin-top: 0; /* Elimina el margen superior */
+    left: -4%; /* Centrar horizontalmente */
+  }
+
+  /* Ajustes para la imagen de la estrella dentro de la sección de características */
+  .features .estrella-icon {
+    position: relative; /* Asegúrate de que esté en posición relativa */
+    top: 350px; /* Ajusta este valor para bajar la imagen de la estrella */
+    left: -4%; /* Centrar horizontalmente */
+    transform: translateX(-50%); /* Centrar horizontalmente */
+  }
+}
+
+@media only screen and (max-width: 430px) and (max-height: 932px) {
+  /* Ajustes para los títulos de los items en resolución 430x932 */
+  .features .features-item h4 {
+    font-size: 18px; /* Reduce el tamaño de la fuente si es necesario */
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: #C5547E;
+  }
+
+  /* Ajustes para los iconos de imágenes en resolución 430x932 */
+  .features .icono-img {
+    width: 40px; /* Ajusta el tamaño del ícono para móviles */
+    height: 40px;
+    margin-right: 15px; /* Ajusta el margen para la disposición en pantalla pequeña */
+    flex-shrink: 0;
+    display: block;
+    object-fit: contain;
+  }
+
+  /* Ajustes para los párrafos en resolución 430x932 */
+  .features .features-item p {
+    font-size: 14px; /* Ajusta el tamaño de la fuente del párrafo */
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    margin: 5px 0 0 0; /* Ajusta el margen superior si es necesario */
+  }
+}
+
+@media only screen and (max-width: 430px) and (max-height: 932px) {
+  /* Ajustes para el título de los ítems con opción de moverse */
+  .features .features-item h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: #C5547E;
+    position: relative; /* Para permitir el ajuste horizontal */
+    left: -20px; /* Ajusta este valor para mover el título a la izquierda o derecha */
+  }
+
+  /* Ajustes para los iconos con opción de moverse */
+  .features .icono-img {
+    width: 48px; /* Conserva el tamaño original */
+    height: 48px;
+    margin-right: 10px; /* Ajusta solo el margen si es necesario */
+    flex-shrink: 0;
+    display: block;
+    object-fit: contain;
+    position: relative; /* Para permitir el ajuste horizontal */
+    left: -25px; /* Ajusta este valor para mover el ícono hacia los lados */
+  }
+    
+     /* Ajustes para la estrella con opción de moverse */
+  .features .estrella-icon {
+    width: 40px; /* Ajusta el tamaño según lo que necesites */
+    margin-bottom: 5px; /* Espacio entre la estrella y el título */
+    position: relative; /* Para permitir el ajuste horizontal */
+    left: 4px; /* Ajusta este valor para mover la estrella a la izquierda */
+  }
+
+  /* Ajustes para los párrafos con opción de moverse */
+  .features .features-item p {
+    font-size: 15px;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    margin: 10px 0 0 0;
+    position: relative; /* Para permitir el ajuste horizontal */
+    left: -20px; /* Ajusta este valor para mover el párrafo hacia los lados */
+  }
+}
+
+
+
+
+
+#about {
+  margin-top: -500px; /* Ajusta este valor según necesites */
+  margin-left: 80px; /* Ajusta este valor según necesite
+    
+}
+
+.titulo-con-estrella {
+  text-align: left; /* Alinea el texto a la izquierda */
+  display: flex; /* Cambia a flex para alinear mejor la estrella con el título */
+  flex-direction: column; /* Coloca los elementos uno encima del otro */
+  align-items: flex-start; /* Alinea los elementos al inicio */
+  margin-bottom: 10px; /* Espacio entre el título y el párrafo */
+}
+
+.about .about-title {
+  font-size: 2rem; /* Ajusta el tamaño del texto del título */
+  font-weight: bold; /* Aumenta el peso de la fuente */
+  color: #C5547E; /* Cambia el color del título si lo deseas */
+  margin: 0 0 10px 0; /* Ajusta el margen superior e inferior */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas, si prefieres */
+}
+
+#about .estrella-icon {
+  width: 40px; /* Ajusta el tamaño de la estrella */
+  margin-bottom: 5px; /* Espacio entre la estrella y el título */
+  display: inline-block; /* Para que la estrella se comporte como un elemento en línea */
+  vertical-align: middle; /* Alinea verticalmente con el texto si es necesario */
+  position: relative; /* Permite mover el elemento usando la propiedad "left" */
+  left: -15px; /* Mueve la estrella 20px hacia la izquierda */
+}
+
+.about .content p {
+  margin-top: 15px; /* Espacio entre el título y el párrafo */
+  margin-bottom: 0; /* Elimina margen inferior del párrafo */
+  width: 60%; /* Haz más angosta la caja del párrafo en pantallas grandes */
+  margin-left: 0; /* Elimina el margen automático */
+  color: #0A1A44 !important; /* Cambia el color del párrafo a #0A1A44 */
+  margin-right: auto; /* Mantén el margen derecho automático si deseas centrar horizontalmente */
+  /* También puedes agregar un margen izquierdo positivo si necesitas un espacio específico */
+  /* margin-left: 20px; */
+}
+
+/* Otros estilos previos */
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  padding-bottom: 10px;
+}
+
+.about .content ul i {
+  font-size: 1.25rem;
+  margin-right: 4px;
+  color: var(--accent-color);
+}
+
+.about .content .read-more {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 12px 24px;
+  border-radius: 5px;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about .content .read-more i {
+  font-size: 18px;
+  margin-left: 5px;
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.about .content .read-more:hover {
+  background: color-mix(in srgb, var(--accent-color), black 20%);
+  padding-right: 19px;
+}
+
+.about .content .read-more:hover i {
+  margin-left: 10px;
+}
+
+/* Ajustes para la resolución 430x932 */
+@media (max-width: 430px) and (min-height: 932px) {
+  #about .estrella-icon {
+    position: relative;
+    top: -60px !important; /* Ajusta la posición de la estrella */
+    left: 28 !important;
+    z-index: 1 !important; /* Asegura un valor de z-index */
+  }
+
+  #about {
+    margin-top: -330px !important; /* Asegura que solo la sección #about se mueva hacia arriba */
+    margin-left: 0px
+  }
+
+  .about .content p {
+    position: relative;
+    top: -10px !important; /* Ajuste para el párrafo */
+    margin-bottom: 0 !important;
+    font-size: 1rem !important;
+      margin-top: px;
+    width: 100% !important; /* Elimina el ancho fijo para pantallas pequeñas */
+  }
+
+  /* Ajuste para la imagen "orejas" */
+  #about .orejas-img {
+    position: relative;
+    top: 120px !important; /* Baja la imagen de "orejas" */
+  }
+
+  .about .about-title {
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    color: #C5547E !important;
+    margin: -55px 0 10px 0 !important; /* Ajusta el margen superior para subir el título */
+    text-transform: uppercase !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+}
+
+
+
+
+
+/*-------------------------------------------------------------- 
+# Team Section
+--------------------------------------------------------------*/
+#team {
+  margin-top: -280px; /* Ajusta este valor según necesites */
+  text-align: center; /* Centra todos los textos dentro de la sección */
+}
+
+.team .team-member {
+  margin-bottom: 20px; /* Reduce el margen inferior entre los miembros */
+}
+
+.team .team-member .member-info h4 {
+  font-size: 24px !important; /* Forzar el tamaño de la tipografía */
+  margin-bottom: 5px; /* Reduce el espacio entre el título y el párrafo */
+  color: #C5547E; /* Cambia el color del título */
+  text-align: center; /* Asegura que el título esté centrado */
+}
+
+.team .team-member .member-info p {
+  font-size: 16px !important; /* Forzar el tamaño de la tipografía */
+  margin-bottom: 10px; /* Reduce el margen inferior del párrafo */
+  color: #0A1A44 !important; /* Cambia el color del párrafo a #0A1A44 */
+  text-align: center; /* Asegura que el párrafo esté centrado */
+}
+
+/* Controla el espaciado general entre las columnas */
+.team .row {
+  row-gap: 20px; /* Espacio entre las filas (más cerca) */
+}
+
+.team .team-member .member-img img {
+  max-width: 90%; /* Ajusta el tamaño de la imagen para que no sea tan grande */
+  margin-bottom: 30px; /* Reduce el espacio entre la imagen y el contenido */
+}
+
+/* Ajusta el padding de las secciones para que estén más cerca entre sí */
+.team .container {
+  padding-top: 30px; /* Reduce el espacio en la parte superior del contenedor */
+  padding-bottom: 30px; /* Reduce el espacio en la parte inferior del contenedor */
+}
+
+/* Ajustes para la resolución 430x932 */
+@media (max-width: 430px) and (min-height: 932px) {
+  #team {
+    margin-top: -90px; /* Sube toda la sección Team */
+  }
+
+  /* Ajuste para los párrafos dentro de la sección de equipo */
+  #team .team-member .member-info p {
+    max-width: 250px; /* Ajusta el ancho de los párrafos para evitar líneas huérfanas */
+    margin: 0 auto; /* Centra el párrafo dentro de su contenedor */
+    text-align: center; /* Alinea el texto al centro si lo prefieres */
+  }
+}
+
+
+
+/*--------------------------------------------------------------
+# Ante
+--------------------------------------------------------------*/
+#ante {
+  margin-top: -150px; /* Ajusta este valor según necesites */
+}
+
+#ante .content p {
+  font-size: px; /* Ajustá el tamaño del texto a tu preferencia */
+  line-height: 1.6; /* Aumentá el espacio entre líneas si es necesario */
+  color: #333; /* Cambiá el color según tu preferencia */
+  margin-top: 10px; /* Espacio superior para el párrafo */
+}
+
+#ante .content h3 {
+  font-size: 50px !important; /* Forzar el tamaño de la tipografía */
+  color: #C5547E;
+  font-weight: 700;
+  margin-top: 5px; /* Espacio superior para el título */
+  position: relative; 
+  top: -300px; /* Sube el título 30px, ajusta según lo que necesites */
+  left: 80px; /* Mueve el título 20px hacia la derecha, ajusta según lo necesites */
+}
+
+#ante .content p:last-child {
+  margin-bottom: 0;
+  font-size: 20px !important; /* Forzar el tamaño de la tipografía */
+}
+
+#ante .img-small {
+  max-width: 3000%;
+  height: 1500px;
+  object-fit: contain;
+  position: relative; /* Añadir posición relativa */
+  left: 780px; /* Mueve la imagen a la derecha */
+}
+
+#ante .estrella-icon {
+  width: 40px; /* Ajusta el tamaño igual que en la sección Features */
+  margin-bottom: 5px; /* Espacio entre la estrella y el título */
+  height: auto; /* Mantén la proporción de la estrella */
+  display: block; /* Asegura que esté en su propia línea */
+  position: relative;
+  top: -300px; /* Ajusta según sea necesario */
+  left: 70px; /* Mueve la estrella 20px a la derecha, ajusta según necesites */
+}
+
+/*--------------------------------------------------------------
+# Ajustes para resolución móvil 430x932
+--------------------------------------------------------------*/
+@media (max-width: 430px) and (max-height: 932px) {
+  #ante {
+    margin-top: -200px; /* Ajusta este valor para mover la sección hacia arriba */
+  }
+
+  #ante .content h3 {
+    top: 90px; /* Baja el título un poco */
+    font-size: 2.6rem !important; /* Usar rem en lugar de px */
+    left: 0; /* Mueve el título hacia la izquierda */
+    position: relative; /* Asegúrate de que esté en posición relativa para que funcione 'left' */
+  }
+
+/*--------------------------------------------------------------
+# Ajustes para resolución móvil 430x932
+--------------------------------------------------------------*/
+@media (max-width: 430px) and (max-height: 932px) {
+  #ante .estrella-icon {
+    max-width: 40px; /* Ajusta el tamaño solo para pantallas móviles */
+    top: 90px; /* Posición ajustada para pantallas móviles */
+    position: relative; /* Mantén la posición relativa */
+    left: -13px; /* Ajusta la posición horizontal para pantallas móviles */
+  }
+#ante .img-small {
+  max-width: 3000%;
+  height: 1500px;
+  object-fit: contain;
+  position: relative; /* Añadir posición relativa */
+  left: 890px; /* Mueve la imagen a la derecha */
+}
+}
+
+}
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# chica
+--------------------------------------------------------------*/
+.chica {
+  position: relative;
+  top: -700px; /* Ajusta este valor según lo necesites */
+}
+
+.chica .content .titulo-con-estrella {
+  display: flex;
+  align-items: center; /* Alinea verticalmente el contenido */
+  justify-content: flex-start; /* Alinea a la izquierda */
+  margin-bottom: 15px; /* Espacio entre el título y el párrafo */
+}
+
+.chica .content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #C5547E !important; /* Cambia el color del título a #C5547E */
+}
+
+.chica .estrella-icon {
+  width: 40px; 
+  height: auto;
+  display: block; 
+  margin-bottom: 5px; 
+  position: relative;
+  left: -600px !important; /* Asegura que se aplique la posición a la izquierda */
+  top: 0px !important; /* Fuerza el desplazamiento hacia abajo */
+}
+
+
+
+.chica .content p {
+  color: #0A1A44 !important; /* Cambia el color del párrafo a #0A1A44 */
+  width: 85%; /* Ajusta el ancho del párrafo, puedes cambiar el valor según lo que necesites */
+
+}
+.chica .content p:last-child {
+  margin-bottom: 0;
+}
+
+.chica .col-lg-6.order-1 {
+  margin-bottom: -50px; /* Ajusta este valor según lo necesario */
+}
+
+.chica .col-lg-6 img {
+  display: block;
+  margin-left: auto; /* Alinea la imagen a la derecha */
+  max-width: 100%; /* Mantiene la imagen responsive */
+  height: auto;
+  position: relative;
+  top: -65px; /* Sube la imagen 50px, ajusta este valor según lo necesites */
+}
+
+/* Conectar con la sección anterior */
+.chica.section {
+  padding-top: 0;
+  margin-top: -50px; /* Ajusta según el espacio necesario para conectar las secciones */
+}
+
+/* Estilos adicionales previamente existentes */
+.chica .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.chica .content ul li {
+  padding-bottom: 10px;
+}
+
+.chica .content ul i {
+  font-size: 1.25rem;
+  margin-right: 4px;
+  color: var(--accent-color);
+}
+
+.chica .content .read-more {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 12px 24px;
+  border-radius: 5px;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chica .content .read-more i {
+  font-size: 18px;
+  margin-left: 5px;
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.chica .content .read-more:hover {
+  background: color-mix(in srgb, var(--accent-color), black 20%);
+  padding-right: 19px;
+}
+
+.chica .content .read-more:hover i {
+  margin-left: 10px;
+}
+
+/* Estilo para que el texto esté sobre la imagen en pantallas pequeñas */
+@media (max-width: 768px) {
+  .chica .row {
+    flex-direction: column-reverse; /* Cambia el orden en pantallas pequeñas */
+  }
+@media (max-width: 430px) and (max-height: 932px) {
+  .chica {
+    top: 0; /* Ajusta la posición general para esta resolución */
+  }
+
+.chica .col-lg-6 img {
+  top: -20px; /* Sube la imagen, ajusta el valor según lo necesites */
+  max-width: 90%; /* Ajusta el tamaño de la imagen para que se vea bien en la resolución */
+  margin-left: auto;
+  margin-right: auto; /* Centra la imagen en pantallas pequeñas */
+  position: relative; /* Asegura que top funcione correctamente */
+}
+
+
+.chica .content h3 {
+  font-size: 1.5rem; /* Ajusta el tamaño del título para pantallas pequeñas */
+  text-align: left; /* Centra el título */
+  margin-top: -50px; /* Ajusta el valor según lo que necesites para subir el título */
+}
+
+  .chica .content p {
+    width: 100%; /* Aumenta el ancho del párrafo para que ocupe todo el espacio */
+    text-align: left; /* Centra el texto */
+        margin-top: 10px;
+  }
+
+  .chica .estrella-icon {
+    left: -185px !important; /* Ajusta la estrella para pantallas pequeñas */
+    top: -60px !important; /* Baja un poco la estrella si es necesario */
+  }
+}
+
+
+/*--------------------------------------------------------------
+# chica duplicado (anterior) - eliminé duplicaciones
+--------------------------------------------------------------*/
+
+.chica .estrella-icon { 
+  width: 40px; 
+  height: auto;
+  display: block; 
+  margin-bottom: 5px; 
+}
+
+.chica .col-lg-6.order-1 {
+  margin-bottom: -50px; 
+}
+
+.chica .col-lg-6 img {
+  display: block;
+  margin-left: auto; 
+  max-width: 100%; 
+  height: auto;
+}
+
+.chica.section {
+  padding-top: 0;
+  margin-top: -50px; 
+}
+
+/* Ajustes específicos para resolución 430x932 */
+@media (max-width: 430px) and (max-height: 932px) {
+  .chica {
+    top: -600px; /* Ajusta este valor según lo necesites */
+  }
+  
+  .chica .estrella-icon {
+    left: -340px; /* Ajusta la posición según el nuevo tamaño */
+  }
+  
+  .chica .col-lg-6.order-1 {
+    margin-bottom: -20px; /* Ajuste del margen inferior */
+  }
+  
+  .chica.section {
+    margin-top: -30px; /* Ajuste para conectar secciones */
+  }
+}
+
+
+
+/*--------------------------------------------------------------
+# Ajuste de la Imagen (img2) para moverla más arriba
+--------------------------------------------------------------*/
+
+.important-points .important-points-image {
+  position: relative;
+  margin-top: -20px; /* Este valor subirá la imagen */
+  min-height: 400px; /* Mantiene la altura mínima */
+}
+
+.important-points .important-points-image img {
+  max-width: 100%; /* Asegura que la imagen no se desborde */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/*--------------------------------------------------------------
+# Testimonials Section
+--------------------------------------------------------------*/
+.testimonials .testimonials-carousel,
+.testimonials .testimonials-slider {
+  overflow: hidden;
+}
+
+.testimonials .testimonial-item {
+  box-sizing: content-box;
+  min-height: 320px;
+}
+
+.testimonials .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 50%;
+  margin: -40px 0 0 40px;
+  position: relative;
+  z-index: 2;
+  border: 6px solid var(--background-color);
+}
+
+.testimonials .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px 45px;
+}
+
+.testimonials .testimonial-item h4 {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 0 0 0 45px;
+}
+
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+  color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  font-size: 26px;
+  line-height: 0;
+}
+
+.testimonials .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.testimonials .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+  transform: scale(-1, -1);
+}
+
+.testimonials .testimonial-item p {
+  margin: 0 15px 0 15px;
+  padding: 20px 20px 60px 20px;
+  background: var(--surface-color);
+  border-radius: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonials .swiper-wrapper {
+  height: auto;
+}
+
+.testimonials .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: var(--background-color);
+  opacity: 1;
+  border: 1px solid var(--accent-color);
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Section
+--------------------------------------------------------------*/
+.portfolio .portfolio-filters {
+  padding: 0 0 20px 0;
+  margin: 0 auto;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio .portfolio-filters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 10px;
+  line-height: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio .portfolio-filters li:hover,
+.portfolio .portfolio-filters li.filter-active {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-filters li:first-child {
+  margin-left: 0;
+}
+
+.portfolio .portfolio-filters li:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 575px) {
+  .portfolio .portfolio-filters li {
+    font-size: 14px;
+    margin: 0 5px;
+  }
+}
+
+.portfolio .portfolio-content {
+  background-color: var(--surface-color);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-content img {
+  transition: 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio .portfolio-content .portfolio-info {
+  background-color: var(--background-color);
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  padding: 25px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio .portfolio-content .portfolio-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-content .portfolio-info h4 a {
+  color: var(--heading-color);
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-content .portfolio-info h4 a:hover {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-content .portfolio-info p {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-content:hover img {
+  transform: scale(1.1);
+}
+
+/*--------------------------------------------------------------
+# Pricing Section
+--------------------------------------------------------------*/
+.pricing .pricing-item {
+  background-color: var(--surface-color);
+  box-shadow: 0 3px 20px -2px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid var(--background-color);
+  padding: 60px 40px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.pricing h3 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.pricing h4 {
+  color: var(--accent-color);
+  font-size: 48px;
+  font-weight: 400;
+  font-family: var(--heading-font);
+  margin-bottom: 0;
+}
+
+.pricing h4 sup {
+  font-size: 28px;
+}
+
+.pricing h4 span {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 18px;
+}
+
+.pricing ul {
+  padding: 20px 0;
+  list-style: none;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  text-align: left;
+  line-height: 20px;
+}
+
+.pricing ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.pricing ul i {
+  color: #059652;
+  font-size: 24px;
+  padding-right: 3px;
+}
+
+.pricing ul .na {
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
+}
+
+.pricing ul .na i {
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
+}
+
+.pricing ul .na span {
+  text-decoration: line-through;
+}
+
+.pricing .buy-btn {
+  color: var(--accent-color);
+  display: inline-block;
+  padding: 8px 35px 10px 35px;
+  border-radius: 50px;
+  transition: none;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--heading-font);
+  transition: 0.3s;
+  border: 1px solid var(--accent-color);
+}
+
+.pricing .buy-btn:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.pricing .featured {
+  border-top-color: var(--accent-color);
+}
+
+.pricing .featured .buy-btn {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+@media (max-width: 992px) {
+  .pricing .box {
+    max-width: 60%;
+    margin: 0 auto 30px auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .pricing .box {
+    max-width: 80%;
+    margin: 0 auto 30px auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .pricing .box {
+    max-width: 100%;
+    margin: 0 auto 30px auto;
+  }
+}
+
+/*--------------------------------------------------------------
+# Faq Section
+--------------------------------------------------------------*/
+.faq .faq-container .faq-item {
+  background-color: var(--surface-color);
+  position: relative;
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.faq .faq-container .faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq .faq-container .faq-item h3 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 30px 0 0;
+  transition: 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.faq .faq-container .faq-item h3 .num {
+  color: var(--accent-color);
+  padding-right: 5px;
+}
+
+.faq .faq-container .faq-item h3:hover {
+  color: var(--accent-color);
+}
+
+.faq .faq-container .faq-item .faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.faq .faq-container .faq-item .faq-content p {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.faq .faq-container .faq-item .faq-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+  line-height: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.faq .faq-container .faq-item .faq-toggle:hover {
+  color: var(--accent-color);
+}
+
+.faq .faq-container .faq-active {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+.faq .faq-container .faq-active h3 {
+  color: var(--accent-color);
+}
+
+.faq .faq-container .faq-active .faq-content {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  opacity: 1;
+  padding-top: 10px;
+}
+
+.faq .faq-container .faq-active .faq-toggle {
+  transform: rotate(90deg);
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Team Section
+--------------------------------------------------------------*/
+.team {
+  text-align: center; /* Centrar todo el contenido dentro de la sección */
+}
+
+.team .team-member {
+  background-color: var(--surface-color);
+  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin: 0 auto; /* Asegurarse de que las tarjetas estén centradas */
+}
+
+.team .team-member .member-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.team .team-member .member-info {
+  padding: 20px 15px 20px 15px; /* Aumentar el espacio entre la imagen y el título */
+}
+
+.team .team-member .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 15px; /* Aumentar el espacio entre el título y la imagen */
+  font-size: 20px;
+  text-align: center; /* Centrar el título */
+}
+
+.team .team-member .member-info span {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 15px; /* Aumentar espacio entre el subtítulo y el párrafo */
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  text-align: center; /* Centrar el subtítulo */
+}
+
+.team .team-member .member-info p {
+  font-size: 14px;
+  line-height: 26px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  text-align: center; /* Centrar el párrafo */
+}
+
+.team .team-member {
+  /* Elimina el fondo blanco */
+  background-color: transparent;
+  box-shadow: none; /* También eliminamos la sombra si no es necesaria */
+  overflow: hidden;
+  border-radius: 0; /* Elimina bordes redondeados si no los quieres */
+  transition: 0.3s;
+  margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact .info-item {
+  background: color-mix(in srgb, var(--default-color), transparent 96%);
+  padding: 30px;
+}
+
+.contact .info-item i {
+  font-size: 38px;
+  line-height: 0;
+  color: var(--accent-color);
+}
+
+.contact .info-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+
+.contact .info-item p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.contact .php-email-form {
+  background: color-mix(in srgb, var(--default-color), transparent 96%);
+  padding: 30px;
+  height: 100%;
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact .php-email-form button[type=submit] {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Details Section
+--------------------------------------------------------------*/
+.portfolio-details .portfolio-details-slider img {
+  width: 100%;
+}
+
+.portfolio-details .swiper-wrapper {
+  height: auto;
+}
+
+.portfolio-details .swiper-button-prev,
+.portfolio-details .swiper-button-next {
+  width: 48px;
+  height: 48px;
+}
+
+.portfolio-details .swiper-button-prev:after,
+.portfolio-details .swiper-button-next:after {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.15);
+  font-size: 24px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.portfolio-details .swiper-button-prev:hover:after,
+.portfolio-details .swiper-button-next:hover:after {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 575px) {
+
+  .portfolio-details .swiper-button-prev,
+  .portfolio-details .swiper-button-next {
+    display: none;
+  }
+}
+
+.portfolio-details .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.portfolio-details .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  opacity: 1;
+}
+
+.portfolio-details .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+.portfolio-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.portfolio-details .portfolio-info h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  bottom: 0;
+}
+
+.portfolio-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.portfolio-details .portfolio-info ul li {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.portfolio-details .portfolio-info ul strong {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 14px;
+}
+
+.portfolio-details .portfolio-info .btn-visit {
+  padding: 8px 40px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.portfolio-details .portfolio-info .btn-visit:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.portfolio-details .portfolio-description h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.portfolio-details .portfolio-description p {
+  padding: 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item {
+  padding: 30px 30px 0 30px;
+  position: relative;
+  background: color-mix(in srgb, var(--default-color), transparent 97%);
+  margin-bottom: 50px;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 50px;
+  border: 6px solid var(--background-color);
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0 5px 0;
+  padding-top: 20px;
+}
+
+.portfolio-details .portfolio-description .testimonial-item h4 {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-left,
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-right {
+  color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  font-size: 26px;
+  line-height: 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+  transform: scale(-1, -1);
+}
+
+.portfolio-details .portfolio-description .testimonial-item p {
+  margin: 0 0 15px 0 0 0;
+  padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Service Details Section
+--------------------------------------------------------------*/
+.service-details .services-list {
+  background-color: var(--surface-color);
+  padding: 10px 30px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  margin-bottom: 20px;
+}
+
+.service-details .services-list a {
+  display: block;
+  line-height: 1;
+  padding: 8px 0 8px 15px;
+  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  margin: 20px 0;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  transition: 0.3s;
+}
+
+.service-details .services-list a.active {
+  color: var(--heading-color);
+  font-weight: 700;
+  border-color: var(--accent-color);
+}
+
+.service-details .services-list a:hover {
+  border-color: var(--accent-color);
+}
+
+.service-details .services-img {
+  margin-bottom: 20px;
+}
+
+.service-details h3 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.service-details h4 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.service-details p {
+  font-size: 15px;
+}
+
+.service-details ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.service-details ul li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.service-details ul i {
+  font-size: 20px;
+  margin-right: 8px;
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Starter Section Section
+--------------------------------------------------------------*/
+.starter-section {
+  /* Add your styles here */
+}
